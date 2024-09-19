@@ -1,15 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion '28.0.3'
+    compileSdk 34
     defaultConfig {
         applicationId "com.zaaach.citypickerdemo"
-        minSdkVersion 14
-        targetSdkVersion 28
+        minSdk 21
+        targetSdk 34
         versionCode 8
         versionName "2.1.0"
-        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
     buildTypes {
         release {
@@ -19,15 +17,12 @@ android {
     }
     productFlavors {
     }
+    namespace 'com.zaaach.citypickerdemo'
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    testImplementation 'junit:junit:4.12'
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
     implementation project(':citypicker')
 }
